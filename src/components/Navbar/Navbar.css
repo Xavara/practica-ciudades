@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 100%;
+  background-color: rgba(71, 71, 255, 0.993);
+  align-items: center;
+}
+
+.izquierda {
+    margin-left: 3%;
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.izquierda img {
+  width: 150px;
+}
+
+.centro {
+  width: calc(100% - 100px);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+
+}
+
+.centro h1{
+    text-align: center;
+}
+
+.derecha {
+  display: flex;
+  width: 300px;
+  margin-top: 60px;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+}
