@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const BuscarPage = () => {
   return (
-    <div>BuscarPage</div>
-  )
-}
+    <div>
+      <div>BuscarPage</div>
+    </div>
+  );
+};

@@ -12,7 +12,7 @@ export const Navbar = () => {
         </div>
         <div className="derecha">
             <div>
-                Buscar
+                <a href="/buscar/213">Buscar</a>
             </div>
             <div>
                 Historial

@@ -1,0 +1,35 @@
+.container-buscador {
+  margin: 2% 4% 2% 4%;
+}
+
+.container-buscador form {
+  display: flex;
+  column-gap: 5%;
+}
+.container-buscador input {
+  width: 80%;
+  padding: 0.7%;
+}
+
+.container-buscador input:focus{
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.container-buscador button {
+  width: 15%;
+  border: 1px solid black;
+  color: white;
+  background-color: rgba(71, 71, 255, 0.993);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.container-buscador button:hover{
+    background-color: rgba(0, 0, 253, 0.993);
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
