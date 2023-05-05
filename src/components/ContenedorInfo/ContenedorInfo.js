@@ -6,7 +6,7 @@ export const ContenedorInfo = (props) => {
     <div className='info-container'>
         <div className='info'>
             <div className='header'>{props.titulo}</div>
-            <div className='contenido'>bb</div>
+            <div className='contenido'>{props.children}</div>
         </div>
     </div>
   )

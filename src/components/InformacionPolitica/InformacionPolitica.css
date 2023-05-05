@@ -1,0 +1,14 @@
+.container-politico{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+}
+
+.container-politico div{
+    margin-left: 5%;
+}
+
+.container-politico img{
+    width: 15%;
+    border: 1px solid black;
+}
