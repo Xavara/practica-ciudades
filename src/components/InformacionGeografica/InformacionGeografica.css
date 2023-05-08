@@ -1,0 +1,28 @@
+.contenedor-geografico{
+    display: flex;
+    align-items: center;
+}
+
+.mapa{
+    float: right;
+    background-color: blue;
+    border-radius: 30px;
+    width: 10%;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    text-align: center;
+}
+
+.mapa img{
+    width: 50%;
+    margin: auto;
+}
+
+.mapa p{
+    text-align: center;
+    color: white;
+}
+
+
+

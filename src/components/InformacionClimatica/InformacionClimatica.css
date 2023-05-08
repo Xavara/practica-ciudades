@@ -1,0 +1,10 @@
+.global {
+	height: 300px;
+	width: auto;
+	background: #f1f1f1;
+	overflow-y: scroll;
+}
+.mensajes {
+    text-align: center;
+	height: auto;
+}
