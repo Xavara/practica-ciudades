@@ -6,6 +6,7 @@ import { InformacionClimatica } from "../../components/InformacionClimatica/Info
 import { InformacionGeografica } from "../../components/InformacionGeografica/InformacionGeografica";
 import { useParams } from "react-router-dom";
 import { useFetchZipopotam } from "../../services/useFetchZippopotam";
+import { useFetchOpenmeteo } from "../../services/useFetchOpenmeteo";
 
 export const BuscarPage = () => {
   const { ciudad } = useParams();
@@ -18,34 +19,42 @@ export const BuscarPage = () => {
     longitud,
     latitud,
   } = useFetchZipopotam(ciudad);
-  console.log("params:", ciudad);
-  console.log(nombreCiudad);
-  console.log(comunidad);
-  console.log(comunidadAbr);
-  console.log(loading);
-  console.log(error);
-  console.log(longitud)
-  console.log(latitud)
-
 
   return (
     <div>
-      <Buscador></Buscador>
-      <ContenedorInfo titulo="Información política">
-        <InformacionPolitica
-          nombreCiudad={nombreCiudad}
-          comunidad={comunidad}
-          comunidadAbr={comunidadAbr}
-          error={error}
-          loading={loading}
-        ></InformacionPolitica>
-      </ContenedorInfo>
-      <ContenedorInfo titulo="Información climática">
-        <InformacionClimatica latitud={latitud} longitud={longitud}></InformacionClimatica>
-      </ContenedorInfo>
-      <ContenedorInfo titulo="Información geográfica">
-        <InformacionGeografica latitud={latitud} longitud={longitud}></InformacionGeografica>
-      </ContenedorInfo>
+      <Buscador loading={loading}></Buscador>
+
+      {error ? (
+        <p style={{ color: "red", marginLeft: "4%"}}>Sin resultados</p>
+      ) : (
+        <>
+          <ContenedorInfo titulo="Información política">
+            <InformacionPolitica
+              nombreCiudad={nombreCiudad}
+              comunidad={comunidad}
+              comunidadAbr={comunidadAbr}
+              error={error}
+              loading={loading}
+            ></InformacionPolitica>
+          </ContenedorInfo>
+          <ContenedorInfo titulo="Información climática">
+            <InformacionClimatica
+              latitud={latitud}
+              longitud={longitud}
+              loading={loading}
+              error={error}
+            ></InformacionClimatica>
+          </ContenedorInfo>
+          <ContenedorInfo titulo="Información geográfica">
+            <InformacionGeografica
+              latitud={latitud}
+              longitud={longitud}
+              error={error}
+              loading={loading}
+            ></InformacionGeografica>
+          </ContenedorInfo>
+        </>
+      )}
     </div>
   );
 };

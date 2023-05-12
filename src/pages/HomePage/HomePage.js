@@ -5,7 +5,7 @@ export const HomePage = () => {
   return (
     <>
     <Buscador></Buscador>
-    <div>HomePage</div>
+    <div style={{marginLeft: "4%"}}>Por favor, introduce un código postal.</div>
     </>
   )
 }

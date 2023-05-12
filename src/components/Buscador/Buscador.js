@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Buscador.css";
-export const Buscador = () => {
+
+export const Buscador = (props) => {
   const [busqueda, setBusqueda] = useState("");
   const [mensajeError, setMensajeError] = useState();
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export const Buscador = () => {
           type="text"
           onChange={handleInput}
         ></input>
-        <button type="submit">Buscar</button>
+        {!props.loading ? <button type="submit">Buscar</button> : ""}
       </form>
       <p className="error">{mensajeError}</p>
     </div>

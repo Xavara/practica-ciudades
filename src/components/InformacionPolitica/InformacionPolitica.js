@@ -2,13 +2,13 @@ import "./InformacionPolitica.css";
 import banderas from "../../config/banderas.json";
 
 export const InformacionPolitica = (props) => {
-  
-
   return (
     <div>
       {props.loading ? (
         <img src="/images/miscalenea/loading.gif" alt="cargando" />
-      ) : props.error ? (<p>Sin resultado</p>) : (
+      ) : props.error ? (
+        <p>Sin resultado</p>
+      ) : (
         <div className="container-politico">
           <img
             alt={banderas[props.comunidadAbr].alt}

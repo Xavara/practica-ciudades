@@ -7,8 +7,12 @@ export const InformacionGeografica = (props) => {
     window.open(url);
   };
   return (
-    <div className="contenedor-geografico">
-      <div>
+    <div>
+      {
+        props.loading ? (<img src="/images/miscalenea/loading.gif" alt="cargando" />) : props.error ? (<p>Sin resultado</p>)
+        : (
+          <div className="contenedor-geografico">
+          <div>
         <p>
           <b>Latitud: </b>
           {props.latitud}
@@ -18,14 +22,18 @@ export const InformacionGeografica = (props) => {
           {props.longitud}
         </p>
       </div>
-      <div className="mapa">
+      <div className="mapa" onClick={handleMapa}>
         <img
           src="/images/miscalenea/mapa.png"
           alt="mapa"
-          onClick={handleMapa}
+          
         ></img>
         <p>Ver mapa</p>
+        </div>
+        </div>
+        )
+      }
       </div>
-    </div>
+    
   );
 };

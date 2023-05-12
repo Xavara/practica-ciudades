@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import HistoryContext from "../context/HistoryContext";
 
 export const useFetchZipopotam = (ciudad) => {
   const [loading, setLoading] = useState(true);
@@ -8,6 +9,8 @@ export const useFetchZipopotam = (ciudad) => {
   const [error, setError] = useState(false);
   const [latitud, setLatitud] = useState("");
   const [longitud, setLongitud] = useState("");
+
+  const {history, setHistory} = useContext(HistoryContext)
 
   const apiURL = `https://api.zippopotam.us/es/${ciudad}`;
   const fetchPolitica = (apiURL) => {
@@ -22,8 +25,12 @@ export const useFetchZipopotam = (ciudad) => {
         setLatitud(data.places[0].latitude);
         setLongitud(data.places[0].longitude);
         console.log(data.places[0]["state abbreviation"]);
+
+        setHistory([{codigoPostal: ciudad, nombreCiudad: data.places[0]["place name"], comunidad: data.places[0].state}, ...history,]);
+        console.log("Historial:", history);
         setLoading(false);
         setError(false);
+        
       })
       .catch((error) => {
         setLoading(false);
